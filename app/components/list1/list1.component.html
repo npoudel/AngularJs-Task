@@ -4,10 +4,4 @@
         <span>{{ name.lastName }}</span>
     </li>
 </ul>
-<form class="row form-inline" name="fullNameForm">
-    <input type="text" ng-model="names.firstName" placeholder="First Name" required>
-    <input type="text" ng-model="names.lastName" placeholder="Last Name" required>
-    <button class="btn btn-success" ng-disabled="fullNameForm.$invalid" ng-click="addItem()">
-        Submit
-    </button>
-</form>
+<custom-form add-item="addItem(value)"></custom-form>    
