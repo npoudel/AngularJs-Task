@@ -1,9 +1,13 @@
 angular.module('customControlDirective', [])
-.directive('customForm', [function(){
+.directive('customForm', [function($scope){
+  debugger;
+  
   return {
     scope: {
       label: '@',
-      addItem: '&'
+      addItem: '&',
+      firstName:'=?',
+      lastName:'=?'
     },
     restrict: 'E',       
     templateUrl: 'components/custom-control/custom-control.component.html',
