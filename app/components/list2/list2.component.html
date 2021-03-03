@@ -5,4 +5,25 @@
     </li>
 </ul> -->
 
-<custom-form first-name="firstName" last-name="lastName"></custom-form>
+<!-- <custom-form first-name="firstName" last-name="lastName"></custom-form> -->
+
+<div>
+    <p>
+        Please Select Form type:
+    </p> 
+    <label data-ng-repeat="option in options">        
+        <input type ="radio" name="option.name"  value = "option.value" ng-model = "option.isSelected" ng-click = 'newValue(option.value)'/>
+        {{option.value}}    
+      </label>  
+      <!--Show Div Based on showval-->
+<div ng-show="showCompany">
+    <label>Business Name:</label><input type="text" class="col-form-control col-sm-4" placeholder="Business Name">
+</div>
+<!--Hide Div Based on showval-->
+<div ng-show="showPersonal">
+    <label>First Name:</label>
+    <input type="text" class="col-form-control col-sm-4" placeholder="First Name">
+    <label>Last Name: </label>
+    <input type="text" class="col-form-control col-sm-4" placeholder="Last Name">
+</div>  
+</div>

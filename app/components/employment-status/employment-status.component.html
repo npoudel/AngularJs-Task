@@ -1,0 +1,49 @@
+<form class="form-horizontal" name="employeeForm">
+    <input type="text" ng-model="firstName" placeholder="First Name" required>
+    <input type="text" ng-model="lastName" placeholder="Last Name" required>
+    <input type="date" ng-model="dob" placeholder="DOB" required>
+    <button class="btn btn-success" ng-disabled="employeeForm.$invalid"
+        ng-click="checkStatus(firstName, lastName, dob)">
+        Submit
+    </button>
+</form>
+<div ng-show="showEmploymentStatus">
+    <p>
+        Employment Status:
+    </p>
+    <div class="row">
+        <div class="col-md-4">
+            <select ng-model="selectedStatus" ng-options="x for x in status">
+            </select>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-success"
+                ng-click="addEmploymentStatus(selectedStatus)">
+                Continue
+            </button>
+        </div>
+    </div>
+</div>
+
+<div ng-show="showEmployee">
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>DOB</th>
+            <th ng-show = "showColumn">Employment Status</th>
+        </tr>
+
+        <tr>
+            <td>{{name.firstName}}</td>
+            <td>{{name.lastName}}</td>
+            <td>{{name.dob}}</td>
+            <td ng-show="showColumn">{{name.employmentStatus}}</td>
+        </tr>
+
+    </table>
+</div>
+<div ng-show="notFound">
+    <p style="color:red">Employee Not Found!!!</p>
+</div>
+
