@@ -1,4 +1,4 @@
-var app = angular.module("mainApp", ["ngRoute","customControlDirective","ngCookies"]);
+var app = angular.module("mainApp", ["ngRoute","customControlDirective","ngCookies",'ui.bootstrap','ngAnimate']);
 
 app.config(function($routeProvider, $httpProvider) {
 	debugger;
@@ -14,8 +14,12 @@ app.config(function($routeProvider, $httpProvider) {
         })
 		.when('/employment', {
             templateUrl:'components/employment-status/employment-status.component.html',
-            controller: 'employmentStatusController'
-        })			
+            controller: 'employmentStatusController2'
+        })
+		.when('/employee',{
+			templateUrl: 'components/employee/employee.component.html',
+			controller: 'employeeController'
+		})			
 		.otherwise({
 			redirectTo: '/employment'
 		});

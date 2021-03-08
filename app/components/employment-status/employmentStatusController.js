@@ -4,17 +4,6 @@ function employmentStatusController($scope, $location, storeValue, $http, $windo
     $scope.status = [
         "Unemployed","Retired","Employed Privately"
     ]
-    $http.get("components/employment-status/employees.json",{
-        params: {firstName: "nirajan"}
-     }).then(
-        function successCallBack(response) {
-            debugger;
-            $scope.names = response.data;
-        },
-        function errorCallback(response) {
-            console.log("error");
-        }
-    );
     $scope.checkStatus = function (firstName, lastName, dob) {
         $scope.showEmploymentStatus = false;
         $scope.showEmployee = false;
